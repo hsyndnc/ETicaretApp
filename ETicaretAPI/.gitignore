@@ -1,0 +1,39 @@
+## --- [ GENEL ] ---
+.vscode/
+.idea/
+*.suo
+*.user
+*.log
+.DS_Store
+
+## --- [ .NET / API ] ---
+bin/
+obj/
+[Vv]s/
+.vs/
+publish/
+*.db
+*.db-journal
+appsettings.Development.json
+usersecrets.json
+**/[Vv]s/
+**/[Oo]bj/
+**/[Bb]in/
+
+## --- [ ANGULAR / CLIENT ] ---
+# Bağımlılıklar
+node_modules/
+
+# Derleme çıktıları
+**/dist/
+**/browser/
+**/.angular/
+
+# Loglar ve geçici dosyalar
+npm-debug.log*
+yarn-debug.log*
+.env*
+.env.local
+
+# Test çıktıları
+/coverage/
