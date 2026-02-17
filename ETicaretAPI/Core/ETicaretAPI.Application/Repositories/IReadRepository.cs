@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ETİcaretAPI.Domain.Entities.Common;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ETicaretAPI.Application.Repositories
 {
-    public interface IReadRepository<T> : IRepository<T> where T : class
+    public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
     {
         //Sorgu ile read işlemleri yaparken burayı kullanıyoruz. 
 
@@ -17,7 +18,7 @@ namespace ETicaretAPI.Application.Repositories
 
         Task<T> GetSingleAsync(Expression<Func<T, bool>> method); //şarta bağlı tek bir örneği getirecek.
 
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(string id);
 
     }
 }
