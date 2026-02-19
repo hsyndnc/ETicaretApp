@@ -16,7 +16,7 @@ namespace ETicaretAPI.Application.Repositories
         IQueryable<T> GetAll(); //Hangi emtity kullanıyorsak , tüm örneklerini getirecek.
         IQueryable<T> GetWhere(Expression<Func<T, bool>> merhod);  //şarta bağlı olarak getirecek.
 
-        Task<T> GetSingleAsync(Expression<Func<T, bool>> method); //şarta bağlı tek bir örneği getirecek.
+        Task<T> GetSingleAsync(Expression<Func<T, bool>> method); //şarta bağlı tek bir örneği getirecek. 
 
         Task<T> GetByIdAsync(string id);
 

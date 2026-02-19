@@ -20,7 +20,7 @@ namespace ETicaretAPI.Persistance.Repositories
             _context = context;
         }
 
-        public DbSet<T> Table => _context.Set<T>(); //hangi entity kullanıyorsak onun setini verir.
+        public DbSet<T> Table => _context.Set<T>(); //hangi entity kullanıyorsak onun tablosunu verir.
 
         public IQueryable<T> GetAll()
         
@@ -28,7 +28,7 @@ namespace ETicaretAPI.Persistance.Repositories
         
 
         public async Task<T> GetByIdAsync(string id)
-            =>await  Table.FirstOrDefaultAsync(data=>data.Id==Guid.Parse(id));
+            =>await  Table.FirstOrDefaultAsync(data=>data.Id==Guid.Parse(id)); //Eğer async fonkksiyon varsa hoca async kullandı,  mesela where ina sync i yok.
 
      
         public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method)
