@@ -13,12 +13,12 @@ namespace ETicaretAPI.Application.Repositories
     {
         //Sorgu ile read işlemleri yaparken burayı kullanıyoruz. 
 
-        IQueryable<T> GetAll(); //Hangi emtity kullanıyorsak , tüm örneklerini getirecek.
-        IQueryable<T> GetWhere(Expression<Func<T, bool>> merhod);  //şarta bağlı olarak getirecek.
+        IQueryable<T> GetAll(bool tracking =true); //Hangi emtity kullanıyorsak , tüm örneklerini getirecek.
+        IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true);  //şarta bağlı olarak getirecek.
 
-        Task<T> GetSingleAsync(Expression<Func<T, bool>> method); //şarta bağlı tek bir örneği getirecek. 
+        Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true); //şarta bağlı tek bir örneği getirecek. 
 
-        Task<T> GetByIdAsync(string id);
+        Task<T> GetByIdAsync(string id, bool tracking = true);
 
     }
 }
