@@ -24,7 +24,7 @@ namespace ETicaretAPI.Persistance.Repositories
 
         public IQueryable<T> GetAll(bool tracking = true)
         {
-            var query = Table.AsQueryable();
+            var query = Table.AsQueryable(); //Dbset ıqueryable döndürüyor ancak , kullanılırken tablo oalrak anlaşılmaması için asqueryable yaparız.
             if (!tracking) //tracking yoksa yani değişiklik yapmayacaksak, performans için asNoTracking kullanırız.
                 query = query.AsNoTracking();
 
@@ -34,7 +34,7 @@ namespace ETicaretAPI.Persistance.Repositories
            
       
 
-        public async Task<T> GetByIdAsync(string id, bool tracking = true) {
+        public async Task<T> GetByIdAsync(string id, bool tracking =true ) {
 
 
             // =>await  Table.FirstOrDefaultAsync(data=>data.Id==Guid.Parse(id)); //Eğer async fonkksiyon varsa hoca async kullandı,  mesela where ina sync i yok.
