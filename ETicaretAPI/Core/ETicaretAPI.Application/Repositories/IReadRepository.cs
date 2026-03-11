@@ -1,4 +1,4 @@
-﻿using ETİcaretAPI.Domain.Entities.Common;
+﻿ using ETİcaretAPI.Domain.Entities.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
